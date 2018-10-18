@@ -1,0 +1,8 @@
+<h1><%= t ".themes" %></h1>
+
+<ul>
+  <%= render @themes %>
+</ul>
+<%= pagy_nav(@pagy).html_safe %>
+
+<%= link_to t(".new"), new_theme_path %>

@@ -1,0 +1,8 @@
+en:
+  themes:
+    create:
+      success: New theme created!
+    update:
+      success: Theme updated!
+    destroy:
+      success: Delete success!

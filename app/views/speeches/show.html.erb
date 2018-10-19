@@ -1,0 +1,16 @@
+<h1><%= @speech.title %></h1>
+<div>
+  <%= t ".author" %><%= @speech.user.name %>
+</div>
+<div>
+  <%= t ".theme" %>
+    <% @speech.themes.each do |theme| %>
+      <%= theme.title %>
+    <% end %>
+</div>
+<div>
+  <%= t ".day" %><%= @speech.speaking_day %>
+</div>
+<div>
+  <%= sanitize @speech.content %>
+</div>

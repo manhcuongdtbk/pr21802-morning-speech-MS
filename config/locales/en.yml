@@ -15,6 +15,7 @@ en:
     index:
       themes: All themes
       new: Create new theme
+
   shared:
     error_messages:
       form_contains: This form contains %{count}.
@@ -86,3 +87,25 @@ en:
       author_of_the_week: Author of the Week
       author_description: Don't be scared of the truth because we need to restart the human foundation in truth...
       post_date: "%{time_ago} ago"
+      
+  speeches:
+    form:
+      title: Insert new title
+      save: Save
+    speech:
+      show: Show
+      edit: Edit
+      delete: Delete
+      sure: Are you sure?
+    edit:
+      edit: Edit your speech
+      back: Back
+    index:
+      speeches: Speeches
+    new:
+      new: Create new speech
+      back: Back
+    show:
+      author: "Author: "
+      theme: "Theme: "
+      day: "Day: "

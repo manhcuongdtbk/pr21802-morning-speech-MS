@@ -2,3 +2,11 @@ en:
   users:
     find_user:
       info: That user doesn't exist!
+
+  speeches:
+    create:
+      success: New speech created!
+    update:
+      success: Speech updated!
+    destroy:
+      success: Delete success!

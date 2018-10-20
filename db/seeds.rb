@@ -14,14 +14,14 @@ User.create!(name: "Foo Bar", email: "foo@bar.com", password: "foobar",
     password_confirmation: password)
 end
 
-69.times do |n|
+12.times do
   title  = Faker::Book.genre
   Theme.create! title: title
 end
 
 69.times do |n|
   title  = Faker::Book.title
-  content = Faker::Lorem.paragraph
+  content = Faker::Lorem.paragraph 50, false, 20
   speaking_day = Faker::Time.forward(n+1, :morning)
   n % 2 == 0 ? status = 0 : status = 1
   location_id = rand(1..3)
@@ -31,5 +31,7 @@ end
 end
 
 69.times do |n|
-  SpeechTheme.create!(speech_id: rand(1..69), theme_id: rand(1..69))
+  speech_id = n + 1
+  theme_id = rand(1..12)
+  SpeechTheme.create!(speech_id: speech_id, theme_id: theme_id)
 end

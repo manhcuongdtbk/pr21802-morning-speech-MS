@@ -74,3 +74,15 @@ en:
       x: 69
       trainee: Trainee
       user_name: Bùi Mạnh Cường
+
+  themes:
+    index:
+      themes_title: A Place for Awesome Speeches
+      all: All
+      read_more: Read More
+      cuong: Bùi Mạnh Cường
+      thai: Nguyễn Đình Thái
+      author_of_the_month: Author of the Month
+      author_of_the_week: Author of the Week
+      author_description: Don't be scared of the truth because we need to restart the human foundation in truth...
+      post_date: "%{time_ago} ago"

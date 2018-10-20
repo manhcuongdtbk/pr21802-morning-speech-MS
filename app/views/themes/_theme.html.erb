@@ -1,6 +1,0 @@
-<li id="theme-<%= theme.id %>">
-  <span><%= theme.title %></span>
-    <%= link_to t(".show"), theme_path(theme) %>
-    <%= link_to t(".edit"), edit_theme_path(theme) %>
-    <%= link_to t(".delete"), theme, method: :delete, data: {confirm: t(".sure")} %>
-</li>

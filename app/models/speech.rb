@@ -6,4 +6,6 @@ class Speech < ApplicationRecord
 
   validates :title, :content, :speaking_day, :location_id, :user_id,
     presence: true
+
+  scope :created_at_desc, ->{order created_at: :desc}
 end

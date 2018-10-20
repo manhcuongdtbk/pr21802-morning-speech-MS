@@ -15,10 +15,15 @@
 //= require bootstrap-sprockets
 //= require material/bootstrap-material-design.min
 //= require material/moment.min
-//= require material/bootstrap-datetimepicker
+//= require material/bootstrap-selectpicker
+//= require material/bootstrap-tagsinput
+//= require material/jasny-bootstrap.min
+//= require material/jquery.flexisel.js
+//= require material/bootstrap-datetimepicker.min
 //= require material/nouislider.min
-//= require material/jquery.sharrre
 //= require material/material-kit.js
+//= require material/modernizr.js
+//= require material/vertical-nav.js
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks

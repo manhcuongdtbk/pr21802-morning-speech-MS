@@ -1,7 +1,7 @@
 <% content_for :body_class, "landing-page" %>
-<% content_for :footer_class, "footer-default" %>
+<% content_for :footer_class, "footer" %>
 
-<div class="page-header header-filter" data-parallax="true" style="background: url(<%= asset_path 'profile_city.jpg' %>)">
+<div class="page-header header-filter" data-parallax="true" style="background: url(<%= asset_path 'bg8.jpg' %>)">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -60,62 +60,52 @@
       <h2 class="title">Here is our team</h2>
       <div class="team">
         <div class="row">
-          <div class="col-md-4">
-            <div class="team-player">
-              <div class="card card-plain">
-                <div class="col-md-6 ml-auto mr-auto">
-                  <%= image_tag("faces/chi.jpg", alt: "Thumbnail Image", class: "img-raised rounded-circle img-fluid") %>
+          <div class="col-md-6">
+            <div class="card card-profile card-plain">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="card-header card-header-image">
+                    <%= image_tag("faces/cuong.jpg", alt: "Thumbnail Image", class: "img") %>
+                  </div>
                 </div>
-                <h4 class="card-title">Nguyễn Thị Kim Chi
-                  <br>
-                  <small class="card-description text-muted">Trainer</small>
-                </h4>
-                <div class="card-body">
-                  <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                    <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                </div>
-                <div class="card-footer justify-content-center">
-                  <a href="https://github.com/chintk" class="btn btn-link btn-just-icon"><i class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="team-player">
-              <div class="card card-plain">
-                <div class="col-md-6 ml-auto mr-auto">
-                  <%= image_tag("faces/cuong.jpg", alt: "Thumbnail Image", class: "img-raised rounded-circle img-fluid") %>
-                </div>
-                <h4 class="card-title">Bùi Mạnh Cường
-                  <br>
-                  <small class="card-description text-muted">Trainee</small>
-                </h4>
-                <div class="card-body">
-                  <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                    <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                </div>
-                <div class="card-footer justify-content-center">
-                  <a href="https://github.com/manhcuongdtbk" class="btn btn-link btn-just-icon"><i class="fa fa-github"></i></a>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <h4 class="card-title">Bùi Mạnh Cường</h4>
+                    <h6 class="category text-muted">Trainee</h6>
+                    <p class="card-description">
+                      Don't be scared of the truth because we need to restart the human foundation in truth...
+                    </p>
+                  </div>
+                  <div class="card-footer justify-content-center">
+                    <%= link_to "https://github.com/manhcuongdtbk", class: "btn btn-just-icon btn-link btn-github" do %>
+                      <i class="fa fa-github"></i>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="team-player">
-              <div class="card card-plain">
-                <div class="col-md-6 ml-auto mr-auto">
-                  <%= image_tag("faces/thai.jpg", alt: "Thumbnail Image", class: "img-raised rounded-circle img-fluid") %>
+          <div class="col-md-6">
+            <div class="card card-profile card-plain">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="card-header card-header-image">
+                    <%= image_tag("faces/thai.jpg", alt: "Thumbnail Image", class: "img") %>
+                  </div>
                 </div>
-                <h4 class="card-title">Nguyễn Đình Thái
-                  <br>
-                  <small class="card-description text-muted">Trainee</small>
-                </h4>
-                <div class="card-body">
-                  <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                    <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                </div>
-                <div class="card-footer justify-content-center">
-                  <a href="https://github.com/dinhthai2206" class="btn btn-link btn-just-icon"><i class="fa fa-github"></i></a>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <h4 class="card-title">Nguyễn Đình Thái</h4>
+                    <h6 class="category text-muted">Trainee</h6>
+                    <p class="card-description">
+                      I love you like Kanye loves Kanye. Don't be scared of the truth.
+                    </p>
+                  </div>
+                  <div class="card-footer justify-content-center">
+                    <%= link_to "https://github.com/dinhthai2206", class: "btn btn-just-icon btn-link btn-github" do %>
+                      <i class="fa fa-github"></i>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>

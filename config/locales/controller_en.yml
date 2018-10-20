@@ -6,3 +6,6 @@ en:
       success: Theme updated!
     destroy:
       success: Delete success!
+  users:
+    find_user:
+      info: That user doesn't exist!

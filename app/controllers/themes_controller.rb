@@ -1,5 +1,5 @@
 class ThemesController < ApplicationController
-  before_action :find_theme
+  load_and_authorize_resource param_method: :theme_params
 
   def index
     @pagy, @themes = pagy(Theme.all, items: 10)
@@ -13,7 +13,6 @@ class ThemesController < ApplicationController
   end
 
   def create
-    @theme = Theme.new theme_params
     if @theme.save
       flash[:success] = t ".success"
       redirect_to themes_path
@@ -43,9 +42,5 @@ class ThemesController < ApplicationController
   private
   def theme_params
     params.require(:theme).permit :title
-  end
-
-  def find_theme
-    @theme = Theme.find_by id: params[:id]
   end
 end

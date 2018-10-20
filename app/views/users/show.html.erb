@@ -1,0 +1,89 @@
+<% content_for :body_class, t(".body_class") %>
+<% content_for :footer_class, t(".footer_class") %>
+
+<div class="page-header header-filter" data-parallax="true" style="background: url(<%= asset_path 'examples/city.jpg' %>)"></div>
+<div class="main main-raised">
+  <div class="profile-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="profile">
+            <div class="avatar">
+              <%= image_tag("faces/cuong.jpg", alt: "Circle Image", class: "img-raised rounded-circle img-fluid") %>
+            </div>
+            <div class="name">
+              <h3 class="title"><%= t ".user_name" %></h3>
+              <h6><%= t ".trainee" %></h6>
+              <%= link_to "https://github.com/manhcuongdtbk", class: "btn btn-just-icon btn-link btn-github" do %>
+                <i class="fa fa-github"></i>
+              <% end %>
+            </div>
+          </div>
+          <div class="follow">
+            <button class="btn btn-fab btn-primary btn-round" rel="tooltip" title="Follow this user">
+              <i class="material-icons">add</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="description text-center">
+        <p><%= t ".user_description" %></p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="profile-tabs">
+            <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+              <!--
+                color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+              -->
+              <li class="nav-item">
+                <a class="nav-link active" href="#work" role="tab" data-toggle="tab">
+                  <i class="material-icons">record_voice_over</i> <%= t ".speeches" %>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#connections" role="tab" data-toggle="tab">
+                  <i class="material-icons">people</i> <%= t ".connections" %>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#media" role="tab" data-toggle="tab">
+                  <i class="fa fa-trophy"></i> <%= t ".awards" %>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- End Profile Tabs -->
+        </div>
+      </div>
+      <div class="tab-content tab-space">
+        <div class="tab-pane active work" id="work">
+          <div class="row">
+            <div class="col-md-7 ml-auto">
+            </div>
+            <div class="col-md-2 mr-auto ml-auto stats">
+              <h4 class="title">Stats</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <b><%= t ".x" %></b> <%= t ".speeches" %></li>
+                <li>
+                  <b><%= t ".x" %></b> <%= t ".followers" %></li>
+                <li>
+                  <b><%= t ".x" %></b> <%= t ".likes" %></li>
+              </ul>
+              <hr>
+              <h4 class="title"><%= t ".about_speech" %></h4>
+              <p class="description"> <%= t ".about_speech_content" %></p>
+              <hr>
+              <h4 class="title"><%= t ".themes" %></h4>
+              <span class="badge badge-primary"><%= t ".us-uk" %></span>
+              <span class="badge badge-rose"><%= t ".k-pop" %></span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane connections" id="connections">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

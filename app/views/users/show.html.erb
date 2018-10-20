@@ -1,0 +1,89 @@
+<% content_for :body_class, "profile-page" %>
+<% content_for :footer_class, "footer" %>
+
+<div class="page-header header-filter" data-parallax="true" style="background: url(<%= asset_path 'examples/city.jpg' %>)"></div>
+<div class="main main-raised">
+  <div class="profile-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="profile">
+            <div class="avatar">
+              <%= image_tag("faces/cuong.jpg", alt: "Circle Image", class: "img-raised rounded-circle img-fluid") %>
+            </div>
+            <div class="name">
+              <h3 class="title">Bùi Mạnh Cường</h3>
+              <h6>Trainee</h6>
+              <%= link_to "https://github.com/manhcuongdtbk", class: "btn btn-just-icon btn-link btn-github" do %>
+                <i class="fa fa-github"></i>
+              <% end %>
+            </div>
+          </div>
+          <div class="follow">
+            <button class="btn btn-fab btn-primary btn-round" rel="tooltip" title="Follow this user">
+              <i class="material-icons">add</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="description text-center">
+        <p>A young, handsome and passionate developer. As his teammates once said: "This man is an extraordinary person both in his life and in his works".</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="profile-tabs">
+            <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+              <!--
+                color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+              -->
+              <li class="nav-item">
+                <a class="nav-link active" href="#work" role="tab" data-toggle="tab">
+                  <i class="material-icons">record_voice_over</i> Speeches
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#connections" role="tab" data-toggle="tab">
+                  <i class="material-icons">people</i> Connections
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#media" role="tab" data-toggle="tab">
+                  <i class="fa fa-trophy"></i> Awards
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- End Profile Tabs -->
+        </div>
+      </div>
+      <div class="tab-content tab-space">
+        <div class="tab-pane active work" id="work">
+          <div class="row">
+            <div class="col-md-7 ml-auto">
+            </div>
+            <div class="col-md-2 mr-auto ml-auto stats">
+              <h4 class="title">Stats</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <b>69</b> Speeches</li>
+                <li>
+                  <b>4</b> Followers</li>
+                <li>
+                  <b>1.2K</b> Likes</li>
+              </ul>
+              <hr>
+              <h4 class="title">About his Speech</h4>
+              <p class="description"> His speeches inspire people in the most awesome way.</p>
+              <hr>
+              <h4 class="title">Themes</h4>
+              <span class="badge badge-primary">US-UK</span>
+              <span class="badge badge-rose">K-Pop</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane connections" id="connections">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

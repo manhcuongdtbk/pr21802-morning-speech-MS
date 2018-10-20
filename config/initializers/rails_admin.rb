@@ -1,4 +1,6 @@
 RailsAdmin.config do |config|
+  config.parent_controller = "ApplicationController"
+  config.main_app_name = ["Morning Speech Management System"]
 
   ### Popular gems integration
 
@@ -37,5 +39,11 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  config.model "Location" do
+    edit do
+      field :name
+    end
   end
 end

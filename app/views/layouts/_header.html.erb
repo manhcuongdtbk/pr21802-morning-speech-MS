@@ -21,7 +21,7 @@
               <i class="material-icons">account_circle</i> Account
             <% end %>
             <div class="dropdown-menu dropdown-with-icons">
-              <%= link_to "#", class: "dropdown-item" do %>
+              <%= link_to current_user, class: "dropdown-item" do %>
                 <i class="material-icons">account_circle</i> Profile
               <% end %>
               <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>

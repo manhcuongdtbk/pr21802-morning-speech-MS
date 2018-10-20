@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_10_20_075518) do
     t.string "title"
     t.text "content"
     t.date "speaking_day"
-    t.integer "status"
+    t.integer "status", default: 0
     t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

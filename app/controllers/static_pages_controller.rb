@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
-  def home
-  end
+  skip_authorization_check only: :home
+
+  def home; end
 end

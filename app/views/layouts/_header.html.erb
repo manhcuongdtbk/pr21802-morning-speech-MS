@@ -1,9 +1,8 @@
-<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+<nav class="navbar navbar-color-on-scroll navbar-transparent  fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
   <div class="container">
     <div class="navbar-translate">
-      <a class="navbar-brand" href="#">Morning Speech Management System</a>
+      <%= link_to "Morning Speech Management System", root_path, class: "navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="sr-only">Toggle navigation</span>
         <span class="navbar-toggler-icon"></span>
         <span class="navbar-toggler-icon"></span>
         <span class="navbar-toggler-icon"></span>
@@ -11,39 +10,40 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <li class="dropdown nav-item">
-          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-            <i class="material-icons">apps</i> Components
-          </a>
-          <div class="dropdown-menu dropdown-with-icons">
-            <a href="../index.html" class="dropdown-item">
-              <i class="material-icons">layers</i> All Components
-            </a>
-            <a href="#" class="dropdown-item">
-              <i class="material-icons">content_paste</i> Documentation
-            </a>
-          </div>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
-            <i class="material-icons">cloud_download</i> Download
+          <a class="nav-link" href="#">
+          Download
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Twitter">
-            <i class="fa fa-twitter"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Like us on Facebook">
-            <i class="fa fa-facebook-square"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Instagram">
-            <i class="fa fa-instagram"></i>
-          </a>
-        </li>
+        <% if user_signed_in? %>
+          <li class="dropdown nav-item">
+            <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>
+              <i class="material-icons">account_circle</i> Account
+            <% end %>
+            <div class="dropdown-menu dropdown-with-icons">
+              <%= link_to "#", class: "dropdown-item" do %>
+                <i class="material-icons">account_circle</i> Profile
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                <i class="material-icons fa fa-sign-out"></i> Sign Out
+              <% end %>
+            </div>
+          </li>
+        <% else %>
+          <li class="dropdown nav-item">
+            <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>
+              <i class="material-icons">account_circle</i> Account
+            <% end %>
+            <div class="dropdown-menu dropdown-with-icons">
+              <%= link_to new_user_session_path, class: "dropdown-item" do %>
+                <i class="material-icons">fingerprint</i> Sign In
+              <% end %>
+              <%= link_to new_user_registration_path, class: "dropdown-item" do %>
+                <i class="material-icons">person_add</i> Sign Up
+              <% end %>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

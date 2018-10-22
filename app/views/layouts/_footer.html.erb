@@ -1,20 +1,16 @@
-<footer class="<%= content_for?(:footer_class) ? "footer " + yield(:footer_class) : "footer" %>">
+<footer class="<%= yield(:footer_class) %>">
   <div class="container">
-    <nav class="float-left">
+    <nav class="pull-left">
       <ul>
         <li>
-          <a href="#">
-            About Us
-          </a>
+          <a href="#">About Us</a>
         </li>
         <li>
-          <a href="#">
-            Blog
-          </a>
+          <a href="#">Blog</a>
         </li>
       </ul>
     </nav>
-    <div class="copyright float-right">
+    <div class="copyright pull-right">
       &copy;<%= Time.now.year %>, made with <i class="material-icons">favorite</i> by
       <a href="https://www.facebook.com/manhcuongdtbk" target="_blank">manhcuongdtbk</a>
     </div>

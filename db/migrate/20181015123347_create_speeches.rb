@@ -4,7 +4,7 @@ class CreateSpeeches < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :content
       t.date :speaking_day
-      t.integer :status
+      t.integer :status, default: 0
       t.references :location, forgein_key: true
 
       t.timestamps

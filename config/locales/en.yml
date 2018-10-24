@@ -48,11 +48,29 @@ en:
       copyright: "&copy;%{time}, "
       creater: made with <i class=material-icons>favorite</i> by <a href=%{url} target=_blank>manhcuongdtbk</a>
     header:
-      download: Download
+      MSMS: Morning Speech Management System
+      dashboard: Dashboad
       account: Account
       profile: Profile
       sign_out: Sign Out
       sign_in: Sign In
       sign_up: Sign Up
 
-
+  users:
+    show:
+      body_class: profile-page
+      footer_class: footer
+      user_description: "A young, handsome and passionate developer. As his teammates once said: \"This man is an extraordinary person both in his life and in his works.\" "
+      speeches: Speeches
+      connections: Connections
+      awards: Awards
+      followers: Followers
+      likes: Likes
+      about_speech: About Cường's Speech
+      about_speech_content: His speeches inspire people in the most awesome way.
+      themes: Themes
+      us-uk: US-UK
+      k-pop: K-Pop
+      x: 69
+      trainee: Trainee
+      user_name: Bùi Mạnh Cường

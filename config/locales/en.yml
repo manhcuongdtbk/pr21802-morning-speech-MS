@@ -17,5 +17,42 @@ en:
       new: Create new theme
   shared:
     error_messages:
-      form_contains: "This form contains %{count}."
-      error: "error"
+      form_contains: This form contains %{count}.
+      error: error
+
+  static_pages:
+    home:
+      msms: Morning Speech Management System
+      introduction: An AWESOME Management System developed by AWESOME developers!
+      submit: Share your stories
+      title: Morning Speech Management System
+      detail: Provides the service about Morning Speech to all the people of Framgia and even guests, the viewer who wants to know more about this AWESOME Company and its AWESOME employees.
+      free_chat: Easy to Manage
+      detail_1: A Mangament System helps to handle and analyze all the information that Admin need regulary
+      verify: Booking faster
+      detail_2: With this, Framgia-ers can know who is going to talk and what theme they are planning to say, booking Morning Speech will be faster from now.
+      fingerprint: Tons of stories
+      detail_3: A place to store and share all the inspirational stories, hobbies, knowledge of Framgia-ers.
+      team: Our team
+      name_1: Bùi Mạnh Cường
+      position_1: Trainee
+      quote_1: Don't be scared of the truth because we need to restart the human foundation in truth...
+      name_2: Nguyễn Đình Thái
+      position_2: Trainee
+      quote_2: Fake it till you make it!
+
+  layouts:
+    footer:
+      about: About Us
+      blog: Blog
+      copyright: "&copy;%{time}, "
+      creater: made with <i class=material-icons>favorite</i> by <a href=%{url} target=_blank>manhcuongdtbk</a>
+    header:
+      download: Download
+      account: Account
+      profile: Profile
+      sign_out: Sign Out
+      sign_in: Sign In
+      sign_up: Sign Up
+
+

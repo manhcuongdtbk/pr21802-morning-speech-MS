@@ -5,11 +5,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h1 class="title">Morning Speech Management System</h1>
-        <h4>An AWESOME Management System developed by some AWESOME (and handsome) developers!</h4>
+        <h1 class="title"><%= t ".msms" %></h1>
+        <h4><%= t ".introduction" %></h4>
         <br>
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
-          <i class="fa fa-play"></i> Watch video
+          <i class="fa fa-play"></i><%= t ".submit" %>
         </a>
       </div>
     </div>
@@ -20,8 +20,8 @@
     <div class="section text-center">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
-          <h2 class="title">Let&apos;s talk product</h2>
-          <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
+          <h2 class="title"><%= t ".title" %></h2>
+          <h5 class="description"><%= t ".detail" %></h5>
         </div>
       </div>
       <div class="features">
@@ -31,8 +31,8 @@
               <div class="icon icon-info">
                 <i class="material-icons">chat</i>
               </div>
-              <h4 class="info-title">Free Chat</h4>
-              <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+              <h4 class="info-title"><%= t ".free_chat" %></h4>
+              <p><%= t ".detail_1" %></p>
             </div>
           </div>
           <div class="col-md-4">
@@ -40,8 +40,8 @@
               <div class="icon icon-success">
                 <i class="material-icons">verified_user</i>
               </div>
-              <h4 class="info-title">Verified Users</h4>
-              <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+              <h4 class="info-title"><%= t ".verify" %></h4>
+              <p><%= t ".detail_2" %></p>
             </div>
           </div>
           <div class="col-md-4">
@@ -49,15 +49,15 @@
               <div class="icon icon-danger">
                 <i class="material-icons">fingerprint</i>
               </div>
-              <h4 class="info-title">Fingerprint</h4>
-              <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+              <h4 class="info-title"><%= t ".fingerprint" %></h4>
+              <p><%= t ".detail_3" %></p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="section text-center">
-      <h2 class="title">Here is our team</h2>
+      <h2 class="title"><%= t ".team" %></h2>
       <div class="team">
         <div class="row">
           <div class="col-md-6">
@@ -70,10 +70,10 @@
                 </div>
                 <div class="col-md-7">
                   <div class="card-body">
-                    <h4 class="card-title">Bùi Mạnh Cường</h4>
-                    <h6 class="category text-muted">Trainee</h6>
+                    <h4 class="card-title"><%= t ".name_1" %></h4>
+                    <h6 class="category text-muted"><%= t ".position_1" %></h6>
                     <p class="card-description">
-                      Don't be scared of the truth because we need to restart the human foundation in truth...
+                      <%= t ".quote_1" %>
                     </p>
                   </div>
                   <div class="card-footer justify-content-center">
@@ -95,10 +95,10 @@
                 </div>
                 <div class="col-md-7">
                   <div class="card-body">
-                    <h4 class="card-title">Nguyễn Đình Thái</h4>
-                    <h6 class="category text-muted">Trainee</h6>
+                    <h4 class="card-title"><%= t ".name_2" %></h4>
+                    <h6 class="category text-muted"><%= t ".position_2" %></h6>
                     <p class="card-description">
-                      I love you like Kanye loves Kanye. Don't be scared of the truth.
+                      <%= t ".quote_2" %>
                     </p>
                   </div>
                   <div class="card-footer justify-content-center">

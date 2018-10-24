@@ -3,16 +3,15 @@
     <nav class="pull-left">
       <ul>
         <li>
-          <a href="#">About Us</a>
+          <a href="#"><%= t ".about" %></a>
         </li>
         <li>
-          <a href="#">Blog</a>
+          <a href="#"><%= t ".blog" %></a>
         </li>
       </ul>
     </nav>
     <div class="copyright pull-right">
-      &copy;<%= Time.now.year %>, made with <i class="material-icons">favorite</i> by
-      <a href="https://www.facebook.com/manhcuongdtbk" target="_blank">manhcuongdtbk</a>
+      <%= t(".copyright", time: Time.now.year).html_safe %><%= t(".creater", url: "https://www.facebook.com/manhcuongdtbk").html_safe %>
     </div>
   </div>
 </footer>

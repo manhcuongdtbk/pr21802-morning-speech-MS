@@ -12,34 +12,34 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="#">
-          Download
+            <%= t ".download" %>
           </a>
         </li>
         <% if user_signed_in? %>
           <li class="dropdown nav-item">
             <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>
-              <i class="material-icons">account_circle</i> Account
+              <i class="material-icons">account_circle</i><%= t ".account" %>
             <% end %>
             <div class="dropdown-menu dropdown-with-icons">
               <%= link_to "#", class: "dropdown-item" do %>
-                <i class="material-icons">account_circle</i> Profile
+                <i class="material-icons">account_circle</i><%= t ".profile" %>
               <% end %>
               <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-                <i class="material-icons fa fa-sign-out"></i> Sign Out
+                <i class="material-icons fa fa-sign-out"></i><%= t ".sign_out" %>
               <% end %>
             </div>
           </li>
         <% else %>
           <li class="dropdown nav-item">
             <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>
-              <i class="material-icons">account_circle</i> Account
+              <i class="material-icons">account_circle</i><%= t ".account" %>
             <% end %>
             <div class="dropdown-menu dropdown-with-icons">
               <%= link_to new_user_session_path, class: "dropdown-item" do %>
-                <i class="material-icons">fingerprint</i> Sign In
+                <i class="material-icons">fingerprint</i><%= t ".sign_in" %>
               <% end %>
               <%= link_to new_user_registration_path, class: "dropdown-item" do %>
-                <i class="material-icons">person_add</i> Sign Up
+                <i class="material-icons">person_add</i><%= t ".sign_up" %>
               <% end %>
             </div>
           </li>

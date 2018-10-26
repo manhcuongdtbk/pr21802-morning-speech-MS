@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :speeches, dependent: :destroy
+  belongs_to :location
 
   rolify
   # Include default devise modules. Others available are:

@@ -31,6 +31,8 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "faker", git: "https://github.com/stympy/faker.git", branch: "master"
   gem "rubocop", "~> 0.55.0", require: false
+  gem "rspec-rails", "~> 3.8"
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -44,6 +46,8 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "4.0.0.rc1"
+  gem "rails-controller-testing"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

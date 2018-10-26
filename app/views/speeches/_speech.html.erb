@@ -1,0 +1,9 @@
+<li id="speech-<%= speech.id %>">
+  <div>
+    <%= link_to speech.title, speech %>
+      <% if can? :manage, speech %>
+        <%= link_to t(".edit"), edit_speech_path(speech) %>
+        <%= link_to t(".delete"), speech, method: :delete, data: {confirm: t(".sure")} %>
+      <% end %>
+  </div>
+</li>

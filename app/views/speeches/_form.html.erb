@@ -1,0 +1,36 @@
+<%= form_for @speech do |f| %>
+  <%= render "shared/error_messages", object: speech %>
+
+  <div>
+    <%= f.label :themes %>
+      <ul class="book_form">
+        <%= f.collection_check_boxes :theme_ids, Theme.all, :id, :title do |theme| %>
+          <li class="theme_box">
+            <%= theme.label("data-value": theme.value) {theme.check_box + theme.text} %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: t(".title"), class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.cktext_area :content, row: 20 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.select :location_id, options_from_collection_for_select(Location.all, :id, :name), class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :speaking_day %>
+    <%= f.date_select :speaking_day, class: "form-control" %>
+  </div>
+
+  <%= f.submit t(".save"), class: "btn btn-primary" %>
+<% end %>

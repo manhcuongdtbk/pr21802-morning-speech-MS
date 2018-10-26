@@ -1,8 +1,146 @@
-<h1><%= t ".themes" %></h1>
+<% content_for :body_class, "blog-posts" %>
+<% content_for :footer_class, "footer" %>
 
-<ul>
-  <%= render @themes %>
-</ul>
-<%= pagy_nav(@pagy).html_safe %>
-
-<%= link_to t(".new"), new_theme_path %>
+<div class="page-header header-filter header-small" data-parallax="true" style="background: url(<%= asset_path 'bg10.jpg' %>)">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto text-center">
+        <h2 class="title"><%= t ".themes_title" %></h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main main-raised">
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col-md-10 ml-auto mr-auto text-center">
+          <ul class="nav nav-pills nav-pills-primary">
+            <li class="nav-item">
+              <a class="nav-link active" href="#pill1" data-toggle="tab"><%= t ".all" %></a>
+            </li>
+            <% @themes.each do |theme| %>
+              <li class="nav-item">
+                <a class="nav-link" href="#pill<%= theme.id + 1 %>" data-toggle="tab"><%= theme.title %></a>
+              </li>
+            <% end %>
+          </ul>
+          <div class="tab-content tab-space">
+            <div class="tab-pane active" id="pill1">
+              <% @speeches.each do |speech| %>
+                <div class="col-md-12 ml-auto mr-auto text-left">
+                  <div class="card card-plain card-blog">
+                    <div class="row">
+                      <h3 class="card-title">
+                        <%= link_to speech.title, "#" %>
+                      </h3>
+                      <p class="card-description">
+                        <%= sanitize speech.content %>
+                        <%= link_to t(".read_more"), "#" %>
+                      </p>
+                      <p class="author">
+                        by
+                        <%= link_to user_path(speech.user) do %>
+                          <b><%= speech.user.name %></b>
+                        <% end %>
+                        <%= t(".post_date", time_ago: time_ago_in_words(speech.created_at)) %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <%== pagy_nav_bootstrap @pagy %>
+            </div>
+            <% @themes.each do |theme| %>
+              <div class="tab-pane" id="pill<%= theme.id + 1 %>">
+                <% theme.speeches.each do |speech| %>
+                  <div class="col-md-12 ml-auto mr-auto text-left">
+                    <div class="card card-plain card-blog">
+                      <div class="row">
+                        <h3 class="card-title">
+                          <%= link_to speech.title, "#" %>
+                        </h3>
+                        <p class="card-description">
+                          <%= sanitize speech.content %>
+                          <%= link_to t(".read_more"), "#" %>
+                        </p>
+                        <p class="author">
+                          by
+                          <%= link_to user_path(speech.user) do %>
+                            <b><%= speech.user.name %></b>
+                          <% end %>
+                          <%= t(".post_date", time_ago: time_ago_in_words(speech.created_at)) %>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="team-5 section-image" style="background: url(<%= asset_path 'bg10.jpg' %>)">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-profile card-plain">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="card-header card-header-image">
+                  <a href="#pablo">
+                    <%= image_tag "faces/cuong.jpg", class: "img" %>
+                  </a>
+                  <div class="ripple-container"></div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <h4 class="card-title"><%= t ".cuong" %></h4>
+                  <h6 class="card-category text-muted"><%= t ".author_of_the_month" %></h6>
+                  <p class="card-description">
+                    <%= t ".author_description" %>
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card card-profile card-plain">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="card-header card-header-image">
+                  <a href="#pablo">
+                    <%= image_tag "faces/thai.jpg", class: "img" %>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <h4 class="card-title"><%= t ".thai" %></h4>
+                  <h6 class="card-category text-muted"><%= t ".author_of_the_week" %></h6>
+                  <p class="card-description">
+                    <%= t ".author_description" %>
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                    <i class="fa fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

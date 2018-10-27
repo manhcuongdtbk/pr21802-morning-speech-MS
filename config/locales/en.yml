@@ -23,6 +23,8 @@ en:
 
   static_pages:
     home:
+      body_class: landing-page
+      footer_class: footer
       msms: Morning Speech Management System
       introduction: An AWESOME Management System developed by AWESOME developers!
       submit: Share your stories
@@ -78,6 +80,8 @@ en:
 
   themes:
     index:
+      body_class: blog-posts
+      footer_class: footer
       themes_title: A Place for Awesome Speeches
       all: All
       read_more: Read More
@@ -87,7 +91,7 @@ en:
       author_of_the_week: Author of the Week
       author_description: Don't be scared of the truth because we need to restart the human foundation in truth...
       post_date: "%{time_ago} ago"
-      
+
   speeches:
     form:
       title: Insert new title
@@ -109,3 +113,15 @@ en:
       author: "Author: "
       theme: "Theme: "
       day: "Day: "
+
+  devise:
+    registrations:
+      new:
+        title: Sign Up
+        body_class: signup-page
+        footer_class: footer
+    sessions:
+      new:
+        title: Sign In
+        body_class: login-page
+        footer_class: footer

@@ -1,6 +1,6 @@
-<% provide :title, "Sign In" %>
-<% content_for :body_class, "login-page" %>
-<% content_for :footer_class, "footer" %>
+<% provide :title, t(".title") %>
+<% content_for :body_class, t(".body_class") %>
+<% content_for :footer_class, t(".footer_class") %>
 
 <div class="page-header header-filter" style="background: url(<%= asset_path 'bg7.jpg' %>); background-size: cover; background-position: top center;">
   <div class="container">
@@ -11,9 +11,9 @@
             <div class="card-header card-header-primary text-center">
               <h4 class="card-title">Sign In</h4>
               <div class="social-line">
-                <a href="#pablo" class="btn btn-just-icon btn-link">
+                <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-just-icon btn-link" do %>
                   <i class="fa fa-facebook-square"></i>
-                </a>
+                <% end %>
                 <a href="#pablo" class="btn btn-just-icon btn-link">
                   <i class="fa fa-twitter"></i>
                 </a>

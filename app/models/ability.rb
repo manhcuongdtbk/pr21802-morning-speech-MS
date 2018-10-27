@@ -3,6 +3,8 @@ class Ability
 
   def initialize user
     return unless user
+
+    can :read, :all
     can :access, :ckeditor        # needed to access Ckeditor filebrowser
     if user.has_role? :admin
       can :manage, :all
@@ -10,7 +12,6 @@ class Ability
       can :read, :dashboard       # allow access to dashboard
     elsif user.has_role? :staff
       can :manage, Speech, user_id: user.id
-      can :read, :all
     end
   end
 end

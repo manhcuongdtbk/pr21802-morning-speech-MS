@@ -1,10 +1,10 @@
 class User < ApplicationRecord
   has_many :speeches, dependent: :destroy
-  belongs_to :location
+  has_many :services
 
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+    :validatable, :omniauthable
 end

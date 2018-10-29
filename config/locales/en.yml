@@ -120,6 +120,27 @@ en:
         title: Sign Up
         body_class: signup-page
         footer_class: footer
+        be_classical: or be classical
+        email_placeholder: Email...
+        password_placeholder: Password...
+        password_confirmation_placeholder: Password confirmation...
+        characters_minimum: "%{minimum_password_length} characters minimum"
+        avatar: Avatar (Optional)
+      edit:
+        title: Update Profile
+        body_class: signup-page
+        footer_class: footer
+        email_placeholder: Email...
+        currently_waiting: "Currently waiting confirmation for: "
+        password_placeholder: "leave blank if you don't want to change"
+        characters_minimum: "%{minimum_password_length} characters minimum"
+        current_password_placeholder: Current Password...
+        enter_current_password: (enter current password to confirm your changes)
+        update: Update
+        unhappy: "Unhappy?"
+        cancel_account: Cancel my account
+        cancel_confirm: "Are you sure?"
+        back: Back
     sessions:
       new:
         title: Sign In

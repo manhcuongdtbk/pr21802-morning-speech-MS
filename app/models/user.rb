@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :speeches, dependent: :destroy
   has_many :services
+  mount_uploader :avatar, AvatarUploader
 
   rolify
   # Include default devise modules. Others available are:

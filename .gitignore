@@ -26,3 +26,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /config/database.yml
+
+# Ignore uploaded test images.
+/public/uploads
+
+# Ignore database schema.
+/db/schema.rb

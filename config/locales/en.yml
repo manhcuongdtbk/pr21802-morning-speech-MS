@@ -113,6 +113,8 @@ en:
       author: "Author: "
       theme: "Theme: "
       day: "Day: "
+      share: Interesting? Share this to your friend
+      share_friends: Share to your friends
 
   devise:
     registrations:

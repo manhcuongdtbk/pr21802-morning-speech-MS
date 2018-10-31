@@ -27,6 +27,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require init_ckeditor.coffee
+//= require social-share-button
 //= require ckeditor/init
 //= require_tree .
-//= require init_ckeditor.coffee

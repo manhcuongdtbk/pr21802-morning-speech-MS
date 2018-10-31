@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-md-10 ml-auto mr-auto">
         <div class="card card-signup">
-          <h2 class="card-title text-center">Sign Up</h2>
+          <h2 class="card-title text-center"><%= t ".title" %></h2>
           <div class="card-body">
             <div class="row">
               <div class="col-md-5 ml-auto">
@@ -45,10 +45,11 @@
                   </div>
                 </div>
               </div>
+
               <div class="col-md-5 mr-auto">
                 <div class="social text-center">
                   <button class="btn btn-just-icon btn-round btn-facebook">
-                    <i class="fa fa-facebook"> </i>
+                    <i class="fa fa-facebook"></i>
                   </button>
                   <button class="btn btn-just-icon btn-round btn-twitter">
                     <i class="fa fa-twitter"></i>
@@ -56,42 +57,52 @@
                   <button class="btn btn-just-icon btn-round btn-google">
                     <i class="fa fa-google-plus"></i>
                   </button>
-                  <h4> or be classical </h4>
+                  <h4> <%= t ".be_classical" %> </h4>
                 </div>
-                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form") do |f| %>
+
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {multipart: true}, class: "form") do |f| %>
                   <%= devise_error_messages! %>
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon">
                         <i class="material-icons">email</i>
                       </span>
-                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email..." %>
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t(".email_placeholder") %>
                     </div>
                   </div>
+
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon">
                         <i class="material-icons">lock_outline</i>
                       </span>
-                      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password..." %>
-                      <% if @minimum_password_length %>
-                      <em>(<%= @minimum_password_length %> characters minimum)</em>
-                      <% end %>
+                      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: t(".password_placeholder") %>
                     </div>
+                    <% if @minimum_password_length %>
+                      <em><%= t ".characters_minimum", minimum_password_length: @minimum_password_length %></em>
+                    <% end %>
                   </div>
+
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon">
                         <i class="material-icons">lock_outline</i>
                       </span>
-                      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Password confirmation..." %>
-                      <% if @minimum_password_length %>
-                      <em>(<%= @minimum_password_length %> characters minimum)</em>
-                      <% end %>
+                      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: t(".password_confirmation_placeholder") %>
                     </div>
+                    <% if @minimum_password_length %>
+                      <em><%= t ".characters_minimum", minimum_password_length: @minimum_password_length %></em>
+                    <% end %>
                   </div>
+
+                  <%= f.label :avatar do %>
+                    <strong><%= t ".avatar" %></strong>
+                    <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+                    <%= f.hidden_field :avatar_cache %>
+                  <% end %>
+
                   <div class="text-center">
-                    <%= f.submit "Sign Up", class: "btn btn-primary btn-round" %>
+                    <%= f.submit t(".title"), class: "btn btn-primary btn-round" %>
                   </div>
                 <% end %>
 

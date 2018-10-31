@@ -9,7 +9,7 @@
         <div class="col-md-6 ml-auto mr-auto">
           <div class="profile">
             <div class="avatar">
-              <%= image_tag("faces/cuong.jpg", alt: "Circle Image", class: "img-raised rounded-circle img-fluid") %>
+              <%= image_tag @user.avatar.url, alt: "Circle Image", class: "img-raised rounded-circle img-fluid" %>
             </div>
             <div class="name">
               <h3 class="title"><%= t ".user_name" %></h3>

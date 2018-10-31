@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :speeches, dependent: :destroy
-  has_many :services
+  has_many :services, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
 
   rolify

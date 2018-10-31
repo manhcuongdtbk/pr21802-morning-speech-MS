@@ -15,3 +15,7 @@
   <%= sanitize @speech.content %>
 </div>
 <div class="fb-comments" data-href="http://localhost:3000/speeches/<%= @speech.id %>" data-numposts="5"></div>
+<h4>
+  <%= t ".share" %>
+  <%= social_share_button_tag(t(".share_friends"), url: "https://www.youtube.com/watch?v=uDaKPPmDSIE", desc: @speech.title) %>
+</h4>

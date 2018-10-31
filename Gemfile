@@ -24,6 +24,7 @@ gem "rails-i18n", "~> 5.1"
 gem "rails_admin", "~> 1.3"
 gem "rolify"
 gem "sass-rails", "~> 5.0"
+gem "social-share-button"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 

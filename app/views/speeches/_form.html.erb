@@ -1,36 +1,57 @@
-<%= form_for @speech do |f| %>
-  <%= render "shared/error_messages", object: speech %>
+<div class="main main-raised speeches-show">
+  <div class="container">
+    <div class="section section-text">
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto mb-5 text-center">
+            <h1 class="title"><%= yield :title %></h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <%= form_for @speech do |f| %>
+            <%= render "shared/error_messages", object: speech %>
 
-  <div>
-    <%= f.label :themes %>
-      <ul class="book_form">
-        <%= f.collection_check_boxes :theme_ids, Theme.all, :id, :title do |theme| %>
-          <li class="theme_box">
-            <%= theme.label("data-value": theme.value) {theme.check_box + theme.text} %>
-          </li>
-        <% end %>
-      </ul>
+            <div>
+              <%= f.label :themes %>
+                <ul class="book_form list-unstyled">
+                  <%= f.collection_check_boxes :theme_ids, Theme.all, :id, :title do |theme| %>
+                    <li class="theme_box">
+                      <%= theme.label("data-value": theme.value) {theme.check_box + theme.text} %>
+                    </li>
+                  <% end %>
+                </ul>
+            </div>
+
+            <div class="form-group has-default">
+              <%= f.label :title %>
+              <%= f.text_field :title, placeholder: t(".title"), class: "form-control" %>
+            </div>
+
+            <div class="title">
+              <%= f.label :content %>
+            </div>
+            <div class="form-group label-floating">
+              <%= f.cktext_area :content, row: 5 %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :location %>
+              <%= f.select :location_id, options_from_collection_for_select(Location.all, :id, :name, @speech.location_id), {}, {class: "selectpicker mt-0", data: {style: "select-with-transition", size: "7"}} %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :speaking_day, class: "label-control" %>
+              <%= f.text_field :speaking_day, class: "form-control datetimepicker", value: (@speech.speaking_day.blank? ? '' : @speech.speaking_day.strftime('%d/%m/%Y')) %>
+            </div>
+
+            <div class="text-center">
+              <%= f.submit t(".save"), class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title, placeholder: t(".title"), class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :content %>
-    <%= f.cktext_area :content, row: 20 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.select :location_id, options_from_collection_for_select(Location.all, :id, :name), class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :speaking_day %>
-    <%= f.date_select :speaking_day, class: "form-control" %>
-  </div>
-
-  <%= f.submit t(".save"), class: "btn btn-primary" %>
-<% end %>
+</div>

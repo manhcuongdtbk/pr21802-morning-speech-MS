@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 723d7807516a425daead8f5e01e74b99515c0d1c
+  revision: a9f579d70aa907be7bf895f84cff186124bd9484
   branch: master
   specs:
     faker (1.9.1)
@@ -75,7 +75,7 @@ GEM
     builder (3.2.3)
     byebug (10.0.2)
     cancancan (2.3.0)
-    capybara (3.10.0)
+    capybara (3.10.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -130,6 +130,8 @@ GEM
     ffi (1.9.25)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -177,7 +179,7 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
-    method_source (0.9.0)
+    method_source (0.9.1)
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
@@ -317,7 +319,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    selenium-webdriver (3.14.1)
+    selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
     shoulda-matchers (4.0.0.rc1)
@@ -382,6 +384,7 @@ DEPENDENCIES
   devise-i18n
   factory_bot_rails
   faker!
+  friendly_id (~> 5.2.0)
   jbuilder (~> 2.5)
   jquery-rails
   koala

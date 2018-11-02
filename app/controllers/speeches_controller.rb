@@ -1,29 +1,19 @@
 class SpeechesController < ApplicationController
-  load_and_authorize_resource param_method: :speech_params
-
-  def index
-    @pagy, @speeches = pagy Speech.all, items: 10
-  end
+  load_and_authorize_resource find_by: :slug
 
   def show
     @location = @speech.location
     @theme = @speech.theme_ids
   end
 
-  def new
-    @speech = Speech.new
-  end
-
   def create
+    @speech.user = current_user
     if @speech.save
       flash[:success] = t ".success"
       redirect_to @speech
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update
@@ -38,11 +28,12 @@ class SpeechesController < ApplicationController
   def destroy
     @speech.destroy
     flash[:success] = t ".success"
-    redirect_to speeches_path
+    redirect_to root_url
   end
 
   private
   def speech_params
-    params.require(:speech).permit :title, :content, :speaking_day, :location_id, theme_ids: []
+    params.require(:speech).permit :title, :content, :speaking_day,
+      :location_id, theme_ids: []
   end
 end

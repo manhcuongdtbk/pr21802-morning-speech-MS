@@ -1,5 +1,4 @@
 <% content_for :body_class, t(".body_class") %>
-<% content_for :footer_class, t(".footer_class") %>
 
 <div class="page-header header-filter" data-parallax="true" style="background: url(<%= asset_path 'examples/city.jpg' %>)"></div>
 <div class="main main-raised">
@@ -12,7 +11,7 @@
               <%= image_tag @user.avatar.url, alt: "Circle Image", class: "img-raised rounded-circle img-fluid" %>
             </div>
             <div class="name">
-              <h3 class="title"><%= t ".user_name" %></h3>
+              <h3 class="title"><%= @user.name %></h3>
               <h6><%= t ".trainee" %></h6>
               <%= link_to "https://github.com/manhcuongdtbk", class: "btn btn-just-icon btn-link btn-github" do %>
                 <i class="fa fa-github"></i>

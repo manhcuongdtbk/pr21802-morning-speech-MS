@@ -1,21 +1,66 @@
-<h1><%= @speech.title %></h1>
-<div>
-  <%= t ".author" %><%= @speech.user.name %>
+<% provide :title, @speech.title %>
+<% provide :custom_header, t(".custom_header") %>
+<% content_for :body_class, t(".body_class") %>
+
+<div class="main main-raised speeches-show">
+  <div class="container">
+    <div class="section section-text">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="text-center mb-5">
+            <h1 class="title"><%= @speech.title %></h1>
+            <h4><%= t(".speaking_day", speaking_day: @speech.speaking_day).html_safe %></h4>
+            <% if current_user == @speech.user %>
+              <h4><%= link_to t(".edit"), edit_speech_path %> | <%= link_to t(".delete"), @speech, method: :delete, data: {confirm: t(".sure")} %></h4>
+            <% end %>
+          </div>
+          <%= sanitize @speech.content %>
+        </div>
+      </div>
+    </div>
+    <div class="section section-blog-info">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="blog-tags">
+                <% @speech.themes.each do |theme| %>
+                  <span class="badge badge-primary badge-pill"><%= theme.title %></span>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <%= social_share_button_tag(t(".share_friends"), url: "https://www.youtube.com/watch?v=uDaKPPmDSIE", desc: @speech.title) %>
+            </div>
+          </div>
+          <hr>
+          <div class="card card-profile card-plain">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="card-avatar">
+                  <%= link_to image_tag(@speech.user.avatar.url, class: "img"), @speech.user %>
+                  <div class="ripple-container"></div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h4 class="card-title"><%= link_to @speech.user.name, @speech.user %></h4>
+                <p class="description"><%= t ".user_description" %></p>
+              </div>
+              <div class="col-md-2">
+                <button type="button" class="btn btn-default pull-right btn-round"><%= t ".follow" %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-comments">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="fb-comments" data-href="http://localhost:3000/speeches/<%= @speech.id %>" data-numposts="5"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
-  <%= t ".theme" %>
-    <% @speech.themes.each do |theme| %>
-      <%= theme.title %>
-    <% end %>
-</div>
-<div>
-  <%= t ".day" %><%= @speech.speaking_day %>
-</div>
-<div>
-  <%= sanitize @speech.content %>
-</div>
-<div class="fb-comments" data-href="http://localhost:3000/speeches/<%= @speech.id %>" data-numposts="5"></div>
-<h4>
-  <%= t ".share" %>
-  <%= social_share_button_tag(t(".share_friends"), url: "https://www.youtube.com/watch?v=uDaKPPmDSIE", desc: @speech.title) %>
-</h4>

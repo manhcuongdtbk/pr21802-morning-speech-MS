@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   private
   def find_user
-    @user = User.find_by id: params[:id]
+    @user = User.friendly.find params[:id]
     return if @user
 
     flash[:info] = t ".info"

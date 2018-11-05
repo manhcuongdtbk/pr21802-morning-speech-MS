@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: a9f579d70aa907be7bf895f84cff186124bd9484
+  revision: 62b5857970218fc7615deb12d844fc4645c4c69f
   branch: master
   specs:
     faker (1.9.1)
@@ -106,7 +106,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.1)
     crass (1.0.4)
     debug_inspector (0.0.3)
     devise (4.5.0)
@@ -141,7 +141,7 @@ GEM
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
-    jbuilder (2.7.0)
+    jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
     jquery-rails (4.3.3)
@@ -214,13 +214,15 @@ GEM
     orm_adapter (0.5.0)
     pagy (0.21.0)
     parallel (1.12.1)
+    paranoia (2.4.1)
+      activerecord (>= 4.0, < 5.3)
     parser (2.5.3.0)
       ast (~> 2.4.0)
     popper_js (1.14.3)
     powerpack (0.1.2)
     public_suffix (3.0.3)
     puma (3.12.0)
-    rack (2.0.5)
+    rack (2.0.6)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
       rack (>= 1.1)
@@ -393,6 +395,7 @@ DEPENDENCIES
   mysql2 (>= 0.4.4, < 0.6.0)
   omniauth-facebook
   pagy
+  paranoia (~> 2.2)
   puma (~> 3.11)
   rails (~> 5.2.1)
   rails-controller-testing

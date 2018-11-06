@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col">
+    <h1>Speeches</h1>
+    <% @speeches.each do |speech| %>
+      <p><%= link_to speech.title, speech %></p>
+    <% end %>
+  </div>
+</div>

@@ -29,6 +29,12 @@
               <% end %>
             </div>
           </li>
+          <%= form_with url: search_path, local: true, method: :get, class: "form-inline" do |form| %>
+            <div class="form-group">
+              <%= form.text_field :q, placeholder: "Search", data: {behavior: "autocomplete"}, class: "form-control" %>
+            </div>
+            <%= form.button "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+          <% end %>
         <% else %>
           <li class="dropdown nav-item">
             <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>

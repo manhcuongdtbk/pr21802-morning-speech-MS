@@ -1,5 +1,4 @@
 <% content_for :body_class, t(".body_class") %>
-<% content_for :footer_class, t(".footer_class") %>
 
 <div class="page-header header-filter header-small" data-parallax="true" style="background: url(<%= asset_path 'bg10.jpg' %>)">
   <div class="container">
@@ -32,15 +31,15 @@
                   <div class="card card-plain card-blog">
                     <div class="row">
                       <h3 class="card-title">
-                        <%= link_to speech.title, "#" %>
+                        <%= link_to speech.title, speech %>
                       </h3>
                       <p class="card-description">
                         <%= sanitize speech.content %>
-                        <%= link_to t(".read_more"), "#" %>
+                        <%= link_to t(".read_more"), speech %>
                       </p>
                       <p class="author">
                         by
-                        <%= link_to user_path(speech.user) do %>
+                        <%= link_to speech.user do %>
                           <b><%= speech.user.name %></b>
                         <% end %>
                         <%= t(".post_date", time_ago: time_ago_in_words(speech.created_at)) %>
@@ -58,15 +57,15 @@
                     <div class="card card-plain card-blog">
                       <div class="row">
                         <h3 class="card-title">
-                          <%= link_to speech.title, "#" %>
+                          <%= link_to speech.title, speech %>
                         </h3>
                         <p class="card-description">
                           <%= sanitize speech.content %>
-                          <%= link_to t(".read_more"), "#" %>
+                          <%= link_to t(".read_more"), speech %>
                         </p>
                         <p class="author">
                           by
-                          <%= link_to user_path(speech.user) do %>
+                          <%= link_to speech.user do %>
                             <b><%= speech.user.name %></b>
                           <% end %>
                           <%= t(".post_date", time_ago: time_ago_in_words(speech.created_at)) %>

@@ -1,21 +1,4 @@
 en:
-  themes:
-    theme:
-      show: Show
-      edit: Edit
-      delete: Delete
-      sure: Are you sure?
-    form:
-      title: New theme...
-      save: Save
-    new:
-      new: Create new theme
-    edit:
-      edit: Edit theme
-    index:
-      themes: All themes
-      new: Create new theme
-
   shared:
     error_messages:
       form_contains: This form contains %{count}.
@@ -24,7 +7,6 @@ en:
   static_pages:
     home:
       body_class: landing-page
-      footer_class: footer
       msms: Morning Speech Management System
       introduction: An AWESOME Management System developed by AWESOME developers!
       submit: Share your stories
@@ -45,6 +27,8 @@ en:
       quote_2: Fake it till you make it!
 
   layouts:
+    application:
+      info: "Info:"
     footer:
       about: About Us
       blog: Blog
@@ -62,7 +46,6 @@ en:
   users:
     show:
       body_class: profile-page
-      footer_class: footer
       user_description: "A young, handsome and passionate developer. As his teammates once said: \"This man is an extraordinary person both in his life and in his works.\" "
       speeches: Speeches
       connections: Connections
@@ -81,7 +64,6 @@ en:
   themes:
     index:
       body_class: blog-posts
-      footer_class: footer
       themes_title: A Place for Awesome Speeches
       all: All
       read_more: Read More
@@ -102,18 +84,21 @@ en:
       delete: Delete
       sure: Are you sure?
     edit:
-      edit: Edit your speech
-      back: Back
+      title: Update Speech
+      custom_header: custom-header
+      body_class: blog-post
     index:
       speeches: Speeches
     new:
-      new: Create new speech
-      back: Back
+      title: Create Speech
+      custom_header: custom-header
+      body_class: blog-post
     show:
-      author: "Author: "
-      theme: "Theme: "
-      day: "Day: "
-      share: Interesting? Share this to your friend
+      custom_header: custom-header
+      body_class: blog-post
+      speaking_day: "Speaking day: %{speaking_day}"
+      user_description: "I've been trying to figure out the bed design for the master bedroom at our Hidden Hills compound...I like good music from Youtube."
+      follow: Follow
       share_friends: Share to your friends
 
   devise:
@@ -121,7 +106,6 @@ en:
       new:
         title: Sign Up
         body_class: signup-page
-        footer_class: footer
         be_classical: or be classical
         email_placeholder: Email...
         password_placeholder: Password...
@@ -131,7 +115,6 @@ en:
       edit:
         title: Update Profile
         body_class: signup-page
-        footer_class: footer
         email_placeholder: Email...
         currently_waiting: "Currently waiting confirmation for: "
         password_placeholder: "leave blank if you don't want to change"
@@ -147,4 +130,3 @@ en:
       new:
         title: Sign In
         body_class: login-page
-        footer_class: footer

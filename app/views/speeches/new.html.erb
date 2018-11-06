@@ -1,6 +1,5 @@
-<h1><%= t ".new" %></h1>
+<% provide :title, t(".title") %>
+<% provide :custom_header, t(".custom_header") %>
+<% content_for :body_class, t(".body_class") %>
 
-<div>
-  <%= render "form", speech: @speech %>
-</div>
-<%= link_to t(".back"), speeches_path %>
+<%= render "form", speech: @speech %>

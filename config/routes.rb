@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :themes, only: :index
   resources :speeches, except: :index
+  get :search, controller: :main
 end

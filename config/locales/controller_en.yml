@@ -1,6 +1,6 @@
 en:
   users:
-    find_user:
+    show:
       info: That user doesn't exist!
 
   speeches:
@@ -10,3 +10,13 @@ en:
       success: Speech updated!
     destroy:
       success: Delete success!
+
+  following:
+    following: Following
+
+  followers:
+    followers: Followers
+
+  relationship:
+    create:
+      info: That user doesn't exist!

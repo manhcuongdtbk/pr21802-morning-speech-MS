@@ -40,6 +40,7 @@ en:
       account: Account
       profile: Profile
       sign_out: Sign Out
+      search: Search
       sign_in: Sign In
       sign_up: Sign Up
 
@@ -60,6 +61,12 @@ en:
       x: 69
       trainee: Trainee
       user_name: Bùi Mạnh Cường
+    follow:
+      follow: follow
+    unfollow:
+      unfollow: unfollow
+    show_follow:
+      back: Back to user
 
   themes:
     index:

@@ -9,7 +9,10 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="text-center mb-5">
             <h1 class="title"><%= @speech.title %></h1>
-            <h4><%= t(".speaking_day", speaking_day: @speech.speaking_day).html_safe %></h4>
+            <span>
+              <h4><%= t(".speaking_day", speaking_day: (l @speech.speaking_day, format: :day)).html_safe %></h4>
+              <h4"><%= t(".location", location: (@speech.location.present? ? @speech.location.name : t(".framgia"))) %></h4>
+            </span>
             <% if current_user == @speech.user %>
               <h4><%= link_to t(".edit"), edit_speech_path %> | <%= link_to t(".delete"), @speech, method: :delete, data: {confirm: t(".sure")} %></h4>
             <% end %>
@@ -43,7 +46,7 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <h4 class="card-title"><%= link_to @speech.user.name, @speech.user %></h4>
+                <h4 class="card-title"><%= @speech.user.present? ? link_to(@speech.user.name, @speech.user) : t(".staff") %></h4>
                 <p class="description"><%= t ".user_description" %></p>
               </div>
               <div class="col-md-2">

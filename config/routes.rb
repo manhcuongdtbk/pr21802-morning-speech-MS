@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
 
   root "static_pages#home"
-  get "/about", to: "static_pages#about"
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   resources :users, only: :show do
     resources :following, only: :index
@@ -12,5 +11,7 @@ Rails.application.routes.draw do
   resources :themes, only: :index
   resources :speeches, except: :index
   resources :relationships, only: [:create, :destroy]
+  resources :activities, only: :index
   get :search, controller: :main
+  get :about, controller: :static_pages
 end

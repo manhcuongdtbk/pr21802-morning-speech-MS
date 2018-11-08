@@ -9,6 +9,7 @@ class SpeechesController < ApplicationController
   def create
     @speech.user = current_user
     if @speech.save
+      @speech.create_activity :create, owner: current_user
       flash[:success] = t ".success"
       redirect_to @speech
     else
@@ -18,6 +19,7 @@ class SpeechesController < ApplicationController
 
   def update
     if @speech.update_attributes speech_params
+      @speech.create_activity :update, owner: current_user
       flash[:success] = t ".success"
       redirect_to speech_path
     else
@@ -27,6 +29,7 @@ class SpeechesController < ApplicationController
 
   def destroy
     @speech.destroy
+    @speech.create_activity :destroy, owner: current_user
     flash[:success] = t ".success"
     redirect_to root_url
   end

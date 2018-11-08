@@ -1,4 +1,6 @@
 class Speech < ApplicationRecord
+  include PublicActivity::Common
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 
@@ -9,8 +11,8 @@ class Speech < ApplicationRecord
   has_many :speech_themes
   has_many :themes, through: :speech_themes
 
-  validates :title, :content, :speaking_day, :location_id, :user_id, :slug,
-    presence: true
+  validates :theme_ids, :title, :content, :speaking_day, :location_id,
+    :user_id, :slug, presence: true
 
   scope :created_at_desc, ->{order created_at: :desc}
 

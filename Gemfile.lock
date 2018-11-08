@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: 2858ceb83b39b82443f79a612e6c6f4857ac38fb
+  revision: b411fcf699cc13a4e15c91227a51f482c32ee694
   specs:
     ransack (2.1.0)
       actionpack (>= 5.0)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 62b5857970218fc7615deb12d844fc4645c4c69f
+  revision: f1532219a9ebc492bfdf4d0696252a6ed890f9c1
   branch: master
   specs:
     faker (1.9.1)
@@ -222,7 +222,7 @@ GEM
       oauth2 (~> 1.1)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
-    pagy (0.21.0)
+    pagy (0.22.0)
     parallel (1.12.1)
     paranoia (2.4.1)
       activerecord (>= 4.0, < 5.3)
@@ -230,6 +230,11 @@ GEM
       ast (~> 2.4.0)
     popper_js (1.14.3)
     powerpack (0.1.2)
+    public_activity (1.6.2)
+      actionpack (>= 3.0.0)
+      activerecord (>= 3.0)
+      i18n (>= 0.5.0)
+      railties (>= 3.0.0)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.6)
@@ -320,7 +325,7 @@ GEM
     ruby-progressbar (1.10.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
-    sass (3.7.0)
+    sass (3.7.2)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -406,6 +411,7 @@ DEPENDENCIES
   omniauth-facebook
   pagy
   paranoia (~> 2.2)
+  public_activity
   puma (~> 3.11)
   rails (~> 5.2.1)
   rails-controller-testing

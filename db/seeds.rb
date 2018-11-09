@@ -16,8 +16,15 @@ User.create!(name: "Foo Bar", email: "foo@bar.com", password: "foobar",
     location_id: rand(Location.first.id..Location.last.id))
 end
 
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each{|followed| user.follow(followed)}
+followers.each{|follower| follower.follow(user)}
+
 12.times do
-  title  = Faker::Book.genre
+  title = Faker::Book.genre
   Theme.create! title: title
 end
 

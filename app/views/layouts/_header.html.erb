@@ -16,6 +16,9 @@
               <%= link_to t(".dashboard"), rails_admin_path, class: "nav-link" %>
             </li>
           <% end %>
+          <li class="nav-item">
+            <%= link_to t(".about"), about_path, class: "nav-link"%>
+          </li>
           <li class="dropdown nav-item">
             <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>
               <i class="material-icons">account_circle</i><%= t ".account" %>
@@ -36,6 +39,9 @@
             <%= form.button t(".search"), class: "btn btn-outline-success my-2 my-sm-0" %>
           <% end %>
         <% else %>
+          <li class="nav-item">
+            <%= link_to t(".about"), about_path, class: "nav-link"%>
+          </li>
           <li class="dropdown nav-item">
             <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>
               <i class="material-icons">account_circle</i><%= t ".account" %>

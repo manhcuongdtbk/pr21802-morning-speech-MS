@@ -25,6 +25,11 @@ en:
       name_2: Nguyễn Đình Thái
       position_2: Trainee
       quote_2: Fake it till you make it!
+    about:
+      about: About
+      name: Framgia Inc.
+      tel: "Tel: 84-24-3795-5417"
+      add: "Add: 13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem District., Ha Noi"
 
   layouts:
     application:
@@ -42,6 +47,7 @@ en:
       sign_out: Sign Out
       sign_in: Sign In
       sign_up: Sign Up
+      about: About
 
   users:
     show:

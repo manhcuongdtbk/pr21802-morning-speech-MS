@@ -30,6 +30,7 @@ class SpeechesController < ApplicationController
   def destroy
     @speech.destroy
     @speech.create_activity :destroy, owner: current_user
+    SpeechDestroyNotification.warn_user(current_user).deliver_later
     flash[:success] = t ".success"
     redirect_to root_url
   end

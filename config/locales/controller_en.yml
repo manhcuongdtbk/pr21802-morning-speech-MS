@@ -20,3 +20,7 @@ en:
   relationship:
     create:
       info: That user doesn't exist!
+
+  speech_destroy_notification:
+    warn_user:
+      subject: Speech Destroy Warning

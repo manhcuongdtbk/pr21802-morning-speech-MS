@@ -87,6 +87,10 @@ en:
       author_description: Don't be scared of the truth because we need to restart the human foundation in truth...
       post_date: "%{time_ago} ago"
 
+  speech_destroy_notification:
+    warn_user:
+      warning_message: "One of your speech has just been deleted. If you think this is a mistake, please contact us!"
+
   speeches:
     form:
       title: Insert new title
@@ -116,6 +120,7 @@ en:
       follow: Follow
       share_friends: Share to your friends
       staff: Framgia Staff
+      sure: "Are you sure?"
 
   devise:
     registrations:

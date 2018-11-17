@@ -4,8 +4,6 @@ class Speech < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  acts_as_paranoid
-
   belongs_to :location
   belongs_to :user
   has_many :speech_themes
@@ -14,17 +12,22 @@ class Speech < ApplicationRecord
   validates :theme_ids, :title, :content, :speaking_day, :location_id,
     :user_id, :slug, presence: true
 
+  enum status: {passive: 0, active: 1}, _suffix: true
+
+  acts_as_paranoid
+
   scope :created_at_desc, ->{order created_at: :desc}
-  
   scope :tomorrow, ->{where speaking_day: Date.tomorrow}
 
   def should_generate_new_friendly_id?
     title_changed? || super
   end
 
-  def Speech.check_speech
-    Speech.tomorrow.each do |speech|
-      UserMailer.speech_tomorrow(speech.user).deliver 
+  class << self
+    def check_speech
+      Speech.tomorrow.each do |speech|
+        UserMailer.speech_tomorrow(speech.user).deliver
+      end
     end
   end
 end

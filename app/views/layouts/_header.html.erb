@@ -17,7 +17,7 @@
             </li>
           <% end %>
           <li class="nav-item">
-            <%= link_to t(".about"), about_path, class: "nav-link"%>
+            <%= link_to t(".activities"), activities_path, class: "nav-link" %>
           </li>
           <li class="dropdown nav-item">
             <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>
@@ -40,20 +40,9 @@
           <% end %>
         <% else %>
           <li class="nav-item">
-            <%= link_to t(".about"), about_path, class: "nav-link"%>
-          </li>
-          <li class="dropdown nav-item">
-            <%= link_to "#", class: "dropdown-toggle nav-link", data: {toggle: "dropdown"} do %>
-              <i class="material-icons">account_circle</i><%= t ".account" %>
+            <%= link_to new_user_session_path, class: "nav-link btn btn-outline-primary" do %>
+              <i class="material-icons">fingerprint</i><%= t ".sign_in" %>
             <% end %>
-            <div class="dropdown-menu dropdown-with-icons">
-              <%= link_to new_user_session_path, class: "dropdown-item" do %>
-                <i class="material-icons">fingerprint</i><%= t ".sign_in" %>
-              <% end %>
-              <%= link_to new_user_registration_path, class: "dropdown-item" do %>
-                <i class="material-icons">person_add</i><%= t ".sign_up" %>
-              <% end %>
-            </div>
           </li>
         <% end %>
       </ul>

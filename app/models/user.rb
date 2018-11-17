@@ -2,7 +2,7 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  acts_as_paranoid
+  mount_uploader :avatar, AvatarUploader
 
   has_many :speeches
   has_many :services, dependent: :destroy
@@ -12,14 +12,16 @@ class User < ApplicationRecord
     foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  mount_uploader :avatar, AvatarUploader
+
   validates :slug, presence: true
 
-  rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
     :validatable, :omniauthable
+
+  acts_as_paranoid
+  rolify
 
   def should_generate_new_friendly_id?
     name_changed? || super

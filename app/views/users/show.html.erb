@@ -12,7 +12,7 @@
             </div>
             <div class="name">
               <h3 class="title"><%= @user.name %></h3>
-              <h6><%= t ".trainee" %></h6>
+              <h6><%= @user.roles.first.name if @user.roles.any? %></h6>
               <%= link_to "https://github.com/manhcuongdtbk", class: "btn btn-just-icon btn-link btn-github" do %>
                 <i class="fa fa-github"></i>
               <% end %>
@@ -66,22 +66,18 @@
             <div class="col-md-2 mr-auto ml-auto stats">
               <h4 class="title">Stats</h4>
               <ul class="list-unstyled">
+                <li><b><%= @user.speeches.count if @user.speeches.any? %></b> <%= t ".speeches" %></li>
                 <li>
-                  <b><%= t ".x" %></b> <%= t ".speeches" %></li>
-                <li><a href="<%= user_followers_path @user %>">
-                  <b id="followers"><%= @user.followers.count %></b> <%= t ".followers" %></a></li>
-                <li><a href="<%= user_following_index_path @user %>">
-                  <b id="following"><%= @user.following.count %></b> <%= t ".following" %></a></li>  
+                  <a href="<%= user_followers_path @user %>">
+                    <b id="followers"><%= @user.followers.count %></b> <%= t ".followers" %>
+                  </a>
+                </li>
                 <li>
-                  <b><%= t ".x" %></b> <%= t ".likes" %></li>
+                  <a href="<%= user_following_index_path @user %>">
+                    <b id="following"><%= @user.following.count %></b> <%= t ".following" %>
+                  </a>
+                </li>
               </ul>
-              <hr>
-              <h4 class="title"><%= t ".about_speech" %></h4>
-              <p class="description"> <%= t ".about_speech_content" %></p>
-              <hr>
-              <h4 class="title"><%= t ".themes" %></h4>
-              <span class="badge badge-primary"><%= t ".us-uk" %></span>
-              <span class="badge badge-rose"><%= t ".k-pop" %></span>
             </div>
           </div>
         </div>

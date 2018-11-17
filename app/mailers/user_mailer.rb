@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
-  def speech_tomorrow user
+  def send_mail user, mail_type
     @user = user
-    mail to: user.email, subject: t(".subject")    
+    @content = t(".#{mail_type}_content", schedule: user.schedule)
+    mail to: user.email, subject: t(".#{mail_type}_subject")
   end
 end

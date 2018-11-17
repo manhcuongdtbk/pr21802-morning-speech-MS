@@ -26,5 +26,8 @@ en:
       subject: Speech Destroy Warning
 
   user_mailer:
-    speech_tomorrow:
-      subject: Tomorrow morning is your morning speech
+    send_mail:
+      remind_day_subject: You have morning speech tomorrow
+      remind_week_subject: Next week is your morning speech
+      remind_day_content: You have morning speech tomorrow
+      remind_week_content: "You will have a morning speech on %{schedule}"

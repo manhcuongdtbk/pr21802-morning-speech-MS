@@ -15,8 +15,16 @@ class Speech < ApplicationRecord
     :user_id, :slug, presence: true
 
   scope :created_at_desc, ->{order created_at: :desc}
+  
+  scope :tomorrow, ->{where speaking_day: Date.tomorrow}
 
   def should_generate_new_friendly_id?
     title_changed? || super
+  end
+
+  def Speech.check_speech
+    Speech.tomorrow.each do |speech|
+      UserMailer.speech_tomorrow(speech.user).deliver 
+    end
   end
 end

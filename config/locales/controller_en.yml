@@ -24,3 +24,7 @@ en:
   speech_destroy_notification:
     warn_user:
       subject: Speech Destroy Warning
+
+  user_mailer:
+    speech_tomorrow:
+      subject: Tomorrow morning is your morning speech

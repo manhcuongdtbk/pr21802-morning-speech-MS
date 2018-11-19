@@ -2,15 +2,13 @@ RailsAdmin.config do |config|
   config.parent_controller = "ApplicationController"
   config.main_app_name = ["Morning Speech Management System"]
 
-  ### Popular gems integration
-
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
   end
   config.current_user_method(&:current_user)
 
-  ## == Cancan ==
+  ## == Cancancan ==
   config.authorize_with :cancancan
 
   ## == Pundit ==
@@ -26,7 +24,9 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.actions do
-    dashboard                     # mandatory
+    dashboard do                  # mandatory
+      statistics false
+    end
     index                         # mandatory
     new
     export
@@ -44,6 +44,51 @@ RailsAdmin.config do |config|
   config.model "Location" do
     edit do
       field :name
+    end
+  end
+
+  # Navigation
+  config.excluded_models += %w(Relationship Service SpeechTheme)
+
+  config.model User do
+    list do
+      field :location_id
+      field :name
+      field :staff_id
+      field :position
+      field :division
+      field :group
+      field :roles
+      field :speeches
+      field :email
+    end
+  end
+  config.model Speech do
+    list do
+      field :location
+      field :speaking_day
+      field :user
+      field :title
+      field :themes
+      field :status
+    end
+  end
+  config.model Theme do
+    list do
+      field :title
+      field :speeches
+    end
+  end
+  config.model Location do
+    list do
+      field :name
+      field :speeches
+    end
+  end
+  config.model Role do
+    list do
+      field :name
+      field :users
     end
   end
 end

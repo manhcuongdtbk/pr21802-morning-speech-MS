@@ -9,7 +9,7 @@ en:
       body_class: landing-page
       msms: Morning Speech Management System
       introduction: An AWESOME Management System developed by AWESOME developers!
-      submit: Share your stories
+      get_started: Get started
       title: Morning Speech Management System
       detail: Provides the service about Morning Speech to all the people of Framgia and even guests, the viewer who wants to know more about this AWESOME Company and its AWESOME employees.
       free_chat: Easy to Manage
@@ -20,34 +20,38 @@ en:
       detail_3: A place to store and share all the inspirational stories, hobbies, knowledge of Framgia-ers.
       team: Our team
       name_1: Bùi Mạnh Cường
-      position_1: Trainee
-      quote_1: Don't be scared of the truth because we need to restart the human foundation in truth...
+      position_1: Technical Leader
+      quote_1: Make it awesome!
       name_2: Nguyễn Đình Thái
-      position_2: Trainee
+      position_2: Business Manager
       quote_2: Fake it till you make it!
     about:
-      about: About
+      body_class: contact-us
+      custom_header: custom-header
+      title: About
+      find_us: Find us at the office
       name: Framgia Inc.
-      tel: "Tel: 84-24-3795-5417"
-      add: "Add: 13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem District., Ha Noi"
+      ring_us: Give us a ring
+      tel: "+84-24-3795-5417"
+      add: "13F Keangnam Landmark 72 Tower,<br> Plot E6,<br> Pham Hung Road,<br> Nam Tu Liem District.,<br> Ha Noi"
 
   layouts:
     application:
       info: "Info:"
     footer:
       about: About Us
-      blog: Blog
+      speeches: Speeches
       copyright: "&copy;%{time}, "
       creater: made with <i class=material-icons>favorite</i> by <a href=%{url} target=_blank>manhcuongdtbk</a>
     header:
       MSMS: Morning Speech Management System
       dashboard: Dashboad
+      activities: Activities
       account: Account
       profile: Profile
       sign_out: Sign Out
       search: Search
       sign_in: Sign In
-      sign_up: Sign Up
       about: About
 
   users:
@@ -58,13 +62,6 @@ en:
       connections: Connections
       awards: Awards
       followers: Followers
-      likes: Likes
-      about_speech: About Cường's Speech
-      about_speech_content: His speeches inspire people in the most awesome way.
-      themes: Themes
-      us-uk: US-UK
-      k-pop: K-Pop
-      x: 69
       trainee: Trainee
       user_name: Bùi Mạnh Cường
     follow:
@@ -72,12 +69,18 @@ en:
     unfollow:
       unfollow: unfollow
     show_follow:
+      custom_header: custom-header
+      body_class: blog-post
       back: Back to user
+    user:
+      user_description: "Dont be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens bed design but the back is..."
+      sumthin: "Sumthin"
 
   themes:
     index:
       body_class: blog-posts
       themes_title: A Place for Awesome Speeches
+      new_speech: New Speech
       all: All
       read_more: Read More
       cuong: Bùi Mạnh Cường
@@ -124,15 +127,6 @@ en:
 
   devise:
     registrations:
-      new:
-        title: Sign Up
-        body_class: signup-page
-        be_classical: or be classical
-        email_placeholder: Email...
-        password_placeholder: Password...
-        password_confirmation_placeholder: Password confirmation...
-        characters_minimum: "%{minimum_password_length} characters minimum"
-        avatar: Avatar (Optional)
       edit:
         title: Update Profile
         body_class: signup-page

@@ -1,10 +1,24 @@
 <% provide :title, @title %>
+<% provide :custom_header, t(".custom_header") %>
+<% content_for :body_class, t(".body_class") %>
 
-<h1><%= @title %></h1>
-<% if @users.present? %>
-  <ul class="users follow">
-    <%= render @users %>
-  </ul>
-  <%== pagy_nav_bootstrap @pagy %>
-<% end %>
-<%= link_to t(".back"), user_path(@user) %>
+<div class="main main-raised speeches-show">
+  <div class="container">
+    <div class="section section-text">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="text-center mb-5">
+            <h1 class="title"><%= @title %></h1>
+          </div>
+        </div>
+      </div>
+      <% if @users.present? %>
+        <div class="row">
+          <%= render @users %>
+        </div>
+        <%== pagy_nav_bootstrap @pagy %>
+      <% end %>
+      <%= link_to t(".back"), user_path(@user) %>
+    </div>
+  </div>
+</div>

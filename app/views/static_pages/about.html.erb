@@ -1,5 +1,33 @@
-<h1><%= t ".about" %></h1>
-<h4><%= t ".name" %></h4>
-<h4><%= t ".tel" %></h4>
-<h4><%= t ".add" %></h4>
-<div id="map" ></div>
+<% provide :title, t(".title") %>
+<% content_for :body_class, t(".body_class") %>
+<% provide :custom_header, t(".custom_header") %>
+
+<div id="map" class="big-map"></div>
+<div class="main main-raised">
+  <div class="contact-content">
+    <div class="container">
+      <div class="row">
+        <div class="info info-horizontal">
+          <div class="icon icon-primary">
+            <i class="material-icons">pin_drop</i>
+          </div>
+          <div class="description">
+            <h4 class="info-title"><%= t ".find_us" %></h4>
+            <p> <%= t".name" %>
+              <br> <%= t(".add").html_safe %>
+            </p>
+          </div>
+        </div>
+        <div class="info info-horizontal">
+          <div class="icon icon-primary">
+            <i class="material-icons">phone</i>
+          </div>
+          <div class="description">
+            <h4 class="info-title"><%= t ".ring_us" %></h4>
+            <p><%= t ".tel" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

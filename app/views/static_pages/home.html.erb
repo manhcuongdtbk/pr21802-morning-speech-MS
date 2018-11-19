@@ -7,9 +7,7 @@
         <h1 class="title"><%= t ".msms" %></h1>
         <h4><%= t ".introduction" %></h4>
         <br>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
-          <i class="fa fa-play"></i><%= t ".submit" %>
-        </a>
+        <%= link_to t(".get_started"), new_user_session_path, class: "btn btn-danger btn-raised btn-lg" %>
       </div>
     </div>
   </div>

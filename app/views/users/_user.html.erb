@@ -1,5 +1,14 @@
-<li id="user-<%= user.id %>">
-  <div>
-    <%= link_to user.name, user %>
+<div class="col-md-4">
+  <div class="card card-profile">
+    <div class="card-avatar">
+      <%= image_tag user.avatar.url, alt: "Circle Image", class: "img" %>
+    </div>
+    <div class="card-body ">
+      <h6 class="card-category text-gray"><%= t ".sumthin" %></h6>
+      <h4 class="card-title"><%= link_to user.name, user %></h4>
+      <p class="card-description">
+        <%= t ".user_description" %>
+      </p>
+    </div>
   </div>
-</li>
+</div>

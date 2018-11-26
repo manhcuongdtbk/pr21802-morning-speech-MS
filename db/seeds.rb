@@ -3,7 +3,7 @@ location_name.length.times do |n|
   Location.create! name: location_name[n]
 end
 
-User.create!(name: "Foo Bar", email: "foo@bar.com", password: "foobar",
+User.create!(name: "Manh Cuong", email: "foo@bar.com", password: "foobar",
   password_confirmation: "foobar",
   location_id: rand(Location.first.id..Location.last.id),
   position: 6,

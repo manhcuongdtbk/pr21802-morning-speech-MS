@@ -19,9 +19,9 @@
             </div>
           </div>
           <div class="follow">
-            <button class="btn btn-fab btn-primary btn-round" rel="tooltip" title="Follow this user">
+            <!-- <button class="btn btn-fab btn-primary btn-round" rel="tooltip" title="Follow this user">
               <i class="material-icons">add</i>
-            </button>
+            </button> -->
             <span id="follow_form">
               <%= render "follow_form", user: @user %>
             </span>
@@ -66,7 +66,9 @@
             <div class="col-md-2 mr-auto ml-auto stats">
               <h4 class="title">Stats</h4>
               <ul class="list-unstyled">
-                <li><b><%= @user.speeches.count if @user.speeches.any? %></b> <%= t ".speeches" %></li>
+                <% if @user.speeches.any? %>
+                  <li><b><%= @user.speeches.count %></b> <%= t ".speeches" %></li>
+                <% end %>
                 <li>
                   <a href="<%= user_followers_path @user %>">
                     <b id="followers"><%= @user.followers.count %></b> <%= t ".followers" %>

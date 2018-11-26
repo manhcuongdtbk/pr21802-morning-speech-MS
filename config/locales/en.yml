@@ -151,6 +151,5 @@ en:
       day: "%a, %d %B , %Y"
 
   user_mailer:
-    speech_tomorrow:
+    send_mail:
       hi: "Hi %{name},"
-      content: Tomorrow is your morning speech.

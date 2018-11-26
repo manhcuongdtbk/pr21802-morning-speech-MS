@@ -5,12 +5,16 @@ end
 
 User.create!(name: "Foo Bar", email: "foo@bar.com", password: "foobar",
   password_confirmation: "foobar",
-  location_id: rand(Location.first.id..Location.last.id)).add_role :admin
+  location_id: rand(Location.first.id..Location.last.id),
+  position: 6,
+  contract_date: Faker::Time.backward(14, :evening)).add_role :admin
 
 69.times do |n|
   User.create!(name: Faker::Name.unique.name, email: "foo#{n+1}@bar.com",
     password: "password", password_confirmation: "password",
-    location_id: rand(Location.first.id..Location.last.id))
+    location_id: rand(Location.first.id..Location.last.id),
+    position: rand(0...6),
+    contract_date: Faker::Time.backward(n+1, :evening)).add_role :staff
 end
 
 users = User.all

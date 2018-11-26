@@ -19,5 +19,13 @@
 
 # Learn more: http://github.com/javan/whenever
 every :day, at: "3:00 pm" do
-  runner "Speech.check_speech"
+  runner "SendMailService.send_daily_remind_mail"
+end
+
+every :friday, at: "3:00 pm" do
+  runner "SendMailService.send_weekly_remind_mail"
+end
+
+every '0 0 15 * *' do
+  runner "ScheduleService.set_schedule"
 end
